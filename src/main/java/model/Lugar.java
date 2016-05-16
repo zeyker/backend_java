@@ -4,13 +4,15 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
+import java.math.BigDecimal;
+
 
 
 
 @Entity
-@Table(name="Publicación")
-@NamedQuery(name="Publicacion.findAll", query="SELECT a FROM Publicacion a")
-public class Publicacion implements Serializable {
+@Table(name="Lugar")
+@NamedQuery(name="Lugar.findAll", query="SELECT a FROM Lugar a")
+public class Lugar implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -30,13 +32,22 @@ public class Publicacion implements Serializable {
 	private String codigoPub;
 
 
-	@Column(name="TipoPublicacion", nullable=false)
+	@Column(name="tipoLugar", nullable=false)
 	private int TipoPublicacionPub;
 
-	@Column(name="Admin_idAdmin",  nullable=false)
-	private int Admin_idAdmin;
 
-	public Publicacion() {
+	@Column(name="lat", nullable=false)
+	private BigDecimal latPub;
+	
+
+	@Column(name="lon", nullable=false)
+	private BigDecimal lonPub;
+	
+	
+	@Column(name="pago", nullable=false, length=45)
+	private String pagoPub;
+
+	public Lugar() {
 	}
 
 	public int getPubId() {
@@ -58,6 +69,16 @@ public class Publicacion implements Serializable {
 	public String getdescripcionPub() {
 		return this.descripcionPub;
 	}
+	
+	
+	public void setpagoPub(String pagoPub) {
+		this.pagoPub = pagoPub;
+	}
+
+	public String getpagoPub() {
+		return this.pagoPub;
+	}
+	
 
 	public void setdescripcionPub(String descripcionPub) {
 		this.descripcionPub = descripcionPub;
@@ -76,13 +97,7 @@ public class Publicacion implements Serializable {
 	public void setTipoPublicacionPub(int TipoPublicacionPub) {
 		this.TipoPublicacionPub = TipoPublicacionPub;
 	}
-	public int getAdmin_idAdmin() {
-		return this.Admin_idAdmin;
-	}
 
-	public void Admin_idAdmin(int Admin_idAdmin) {
-		this.Admin_idAdmin = Admin_idAdmin;
-	}
 	public String getcodigoPub() {
 		return this.codigoPub;
 	}
@@ -91,6 +106,21 @@ public class Publicacion implements Serializable {
 		this.codigoPub = codigoPub;
 	}
 
+	
+	public BigDecimal getlatPub() {
+		return this.latPub;
+	}
+
+	public void setlatPub(BigDecimal latPub) {
+		this.latPub = latPub;
+	}
+	public BigDecimal getlonPub() {
+		return this.lonPub;
+	}
+
+	public void setlonPub(BigDecimal lonPub) {
+		this.lonPub = lonPub;
+	}
 
 
 }

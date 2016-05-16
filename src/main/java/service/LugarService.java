@@ -12,42 +12,42 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import facade.PublicacionFacade;
-import model.Publicacion;
+import facade.LugarFacade;
+import model.Lugar;
 
 @Path("/publicaciones")
-public class PublicacionService {
+public class LugarService {
 	
 	@EJB 
-	PublicacionFacade publicacionFacadeEJB;
+	LugarFacade lugarFacadeEJB;
 	
-	Logger logger = Logger.getLogger(PublicacionService.class.getName());
+	Logger logger = Logger.getLogger(LugarService.class.getName());
 	
 	@GET
 	@Produces({"application/xml", "application/json"})
-	public List<Publicacion> findAll(){
-		return publicacionFacadeEJB.findAll();
+	public List<Lugar> findAll(){
+		return lugarFacadeEJB.findAll();
 	}
 	
 	@GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public Publicacion find(@PathParam("id") Integer id) {
-        return publicacionFacadeEJB.find(id);
+    public Lugar find(@PathParam("id") Integer id) {
+        return lugarFacadeEJB.find(id);
     }
 	
 	@POST
     @Consumes({"application/xml", "application/json"})
-    public void create(Publicacion entity) {
-		publicacionFacadeEJB.create(entity);
+    public void create(Lugar entity) {
+		lugarFacadeEJB.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Integer id, Publicacion entity) {
+    public void edit(@PathParam("id") Integer id, Lugar entity) {
     	entity.setPubId(id.intValue());
-    	publicacionFacadeEJB.edit(entity);
+    	lugarFacadeEJB.edit(entity);
     }
 	
 

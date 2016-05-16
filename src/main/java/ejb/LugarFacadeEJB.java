@@ -5,18 +5,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import facade.AbstractFacade;
-import facade.PublicacionFacade;
-import model.Publicacion;
+import facade.LugarFacade;
+import model.Lugar;
 
 @Stateless
-public class PublicacionFacadeEJB extends AbstractFacade<Publicacion> implements PublicacionFacade {
+public class LugarFacadeEJB extends AbstractFacade<Lugar> implements LugarFacade {
 	
 	
 	@PersistenceContext(unitName = "sakilaPU")
 	private EntityManager em;
 	
-	public PublicacionFacadeEJB() {
-		super(Publicacion.class);
+	public LugarFacadeEJB() {
+		super(Lugar.class);
 	}
 
 	@Override
