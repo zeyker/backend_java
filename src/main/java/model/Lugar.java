@@ -25,7 +25,7 @@ public class Lugar implements Serializable {
 	@Column(name="Descripcion", nullable=false, length=45)
 	private String descripcionPub;
 
-	@Column(name="Valoracion", nullable=false)
+	@Column(name="rating_avg", nullable=true)
 	private int valoracionPub;
 
 	@Column(name="Codigo", nullable=false, length=45)
@@ -43,6 +43,10 @@ public class Lugar implements Serializable {
 	@Column(name="lon", nullable=false)
 	private BigDecimal lonPub;
 	
+	@Column(name="rating_sum", nullable=false)
+	private int sumavalPub;
+	@Column(name="rating_count", nullable=false)
+	private int cantidavalPub;
 	
 	@Column(name="pago", nullable=false, length=45)
 	private String pagoPub;
@@ -69,20 +73,21 @@ public class Lugar implements Serializable {
 	public String getdescripcionPub() {
 		return this.descripcionPub;
 	}
+	public void setdescripcionPub(String descripcionPub) {
+		this.descripcionPub = descripcionPub;
+	}
+	
+	public String getpagoPub() {
+		return this.pagoPub;
+	}
 	
 	
 	public void setpagoPub(String pagoPub) {
 		this.pagoPub = pagoPub;
 	}
 
-	public String getpagoPub() {
-		return this.pagoPub;
-	}
 	
 
-	public void setdescripcionPub(String descripcionPub) {
-		this.descripcionPub = descripcionPub;
-	}
 	public int getvaloracionPub() {
 		return this.valoracionPub;
 	}
@@ -90,14 +95,34 @@ public class Lugar implements Serializable {
 	public void setvaloracionPub(int valoracionPub) {
 		this.valoracionPub = valoracionPub;
 	}
+	
+	
+	public int getsumaPub() {
+		return this.sumavalPub;
+	}
+
+	public void setsumaPub(int sumavalPub) {
+		this.sumavalPub = sumavalPub;
+	}
+	
+	
+	public int getcantidad() {
+		return this.cantidavalPub;
+	}
+	
+	public void setcantidad(int cantidavalPub) {
+		this.cantidavalPub = cantidavalPub;
+	}
+	
+	
 	public int getTipoPublicacionPub() {
 		return this.TipoPublicacionPub;
 	}
-
 	public void setTipoPublicacionPub(int TipoPublicacionPub) {
 		this.TipoPublicacionPub = TipoPublicacionPub;
 	}
-
+	
+	
 	public String getcodigoPub() {
 		return this.codigoPub;
 	}
