@@ -26,7 +26,7 @@ public class Lugar implements Serializable {
 	private String descripcionPub;
 
 	@Column(name="rating_avg", nullable=true)
-	private int valoracionPub;
+	private double valoracionPub;
 
 	@Column(name="Codigo", nullable=false, length=45)
 	private String codigoPub;
@@ -88,11 +88,11 @@ public class Lugar implements Serializable {
 
 	
 
-	public int getvaloracionPub() {
+	public double getvaloracionPub() {
 		return this.valoracionPub;
 	}
 
-	public void setvaloracionPub(int valoracionPub) {
+	public void setvaloracionPub(double valoracionPub) {
 		this.valoracionPub = valoracionPub;
 	}
 	
