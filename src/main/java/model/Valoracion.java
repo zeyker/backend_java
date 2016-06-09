@@ -20,14 +20,23 @@ public class Valoracion implements Serializable {
 	@Column(name="idvaloracion", nullable=false,unique=true)
 	private int valoracionId;
 	
+	@Column(name="rating",  nullable=false)
+	private int valoracion;
+	
 	@Column(name="idUsuario",  nullable=false)
 	private int userId;
+	
+	@Column(name="Fecha", nullable=false)
+	private Timestamp fecha;
+	
+	@Column(name="Texto", nullable=false, length=45)
+	private String texto;
 	
 	@Column(name="idPublicacion",  nullable=false)
 	private int publicacionId;
 	
-	@Column(name="rating",  nullable=false)
-	private int valoracion;
+	
+	
 
 	public Valoracion() {
 	}
@@ -40,29 +49,47 @@ public class Valoracion implements Serializable {
 		this.valoracionId = valId;
 	}
 	
-	public int getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(int valId) {
-		this.userId = valId;
-	}
-	
-	public int getPublicacionId() {
-		return this.publicacionId;
-	}
-
-	public void setPublicacionId(int valId) {
-		this.publicacionId = valId;
-	}
-	
 	public int getValoracion() {
 		return this.valoracion;
 	}
 
-	public void setValoracion(int valId) {
-		this.valoracion = valId;
+	public void setValoracion(int val) {
+		this.valoracion = val;
 	}
+	
+	public int getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(int uId) {
+		this.userId = uId;
+	}
+	public Timestamp getFecha() {
+		return this.fecha;
+	}
+
+	public void setFecha(Timestamp date) {
+		this.fecha = date;
+	}
+
+	public String getTexto() {
+		return this.texto;
+	}
+
+	public void setTexto(String com) {
+		this.texto = com;
+	}
+	public int getPublicacionId() {
+		return this.publicacionId;
+	}
+
+	public void setPublicacionId(int pubId) {
+		this.publicacionId = pubId;
+	}
+	
+	
+
+
 
 	
 
